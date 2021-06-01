@@ -1,20 +1,11 @@
-num_list = [2]
-
-prime = [2]
-
-i = 2
+marked = []
+prime = []
 
 while len(prime) < 10002:
-    i = i + 1
-
-    for num in num_list:
-        if i % num == 0:
-            break
-        else:
-            if i not in prime:
-                prime.append(i)
-    
-    if i not in num_list:
-        num_list.append(i)
+    for i in range (2,1000000):
+        if i not in marked:
+            prime.append(i)
+            for j in range (2, 1000000):
+                marked.append(i*j)
 
 print(prime[-1])
