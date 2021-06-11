@@ -11,7 +11,7 @@ b = 2
 c = 3
 prod = a * b * c
 
-while prod != 1000 or prod < 1000:
+while prod < 1000:
     prod = a * b * c
     a += 1
     b += 1
