@@ -9,12 +9,15 @@
 a = 1
 b = 2
 c = 3
-prod = a * b * c
+add = a + b + c
 
-while prod < 1000:
-    prod = a * b * c
+while add < 1000:
+    if a^2 + b^2 == c^2:
+        if add == 1000:
+            print(a, b, c)
     a += 1
-    b += 1
-    c += 1
-    print(prod)
+    b += 2
+    c += 3
+    add = a + b + c
+    print(add)
     
