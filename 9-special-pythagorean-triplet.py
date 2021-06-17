@@ -6,6 +6,8 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
+# https://en.wikipedia.org/wiki/Formulas_for_generating_Pythagorean_triples
+
 a = 1
 b = 2
 c = 3
