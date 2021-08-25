@@ -1,17 +1,20 @@
 import math
 
-int_dict = {i: True for i in range(2, 10)}
+def prime(n):
+    int_dict = {i: True for i in range(2, n+1)}
 
-## Need to create a constant j variable
-
-for i in range(2, round(math.sqrt(9+1))):
-    if int_dict[i] == True:
-        j = i**2
-        multiplier = 1
-        int_dict[j] = False
-        for j in range(j, 9):
-            j = j+(i*multiplier)
+    for i in range(2, round(math.sqrt(n))):
+        if int_dict[i] == True:
+            j = i**2
+            multiplier = 1
             int_dict[j] = False
-            multiplier += 1
 
-print(int_dict)
+            j_dynamic = j
+
+            while j_dynamic < n-1:
+                j_dynamic = j+(i*multiplier)
+                int_dict[j_dynamic] = False
+                multiplier += 1
+    
+    # need to return the 10,001st prime, not just dictionary
+    print(int_dict)
