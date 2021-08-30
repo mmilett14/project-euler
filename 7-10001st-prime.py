@@ -17,4 +17,10 @@ def prime(n):
                 multiplier += 1
     
     # need to return the 10,001st prime, not just dictionary
-    print(int_dict)
+    prime_list = []
+    
+    for key, value in int_dict.items():
+        if value == True:
+            prime_list.append(key)
+            
+    print(prime_list[-1])
