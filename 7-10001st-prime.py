@@ -1,9 +1,19 @@
-from math, import sqrt, ceil, log
+from math import sqrt, ceil, log
+
+# from https://codereview.stackexchange.com/questions/188053/project-euler-problem-7-in-python-10001st-prime-number
+def upper_bound(n):
+if n < 6:
+    return 100
+return ceil(n * (log(n) + log(log(n))))
+
 
 def prime(n):
-    int_dict = {i: True for i in range(2, n+1)}
+    
+    upper_bound = upper_bound(n)
+    
+    int_dict = {i: True for i in range(2, upper_bound+1)}
 
-    for i in range(2, round(math.sqrt(n))):
+    for i in range(2, round(sqrt(n))):
         if int_dict[i] == True:
             j = i**2
             multiplier = 1
@@ -15,8 +25,7 @@ def prime(n):
                 j_dynamic = j+(i*multiplier)
                 int_dict[j_dynamic] = False
                 multiplier += 1
-    
-    # need to return the 10,001st prime, not just dictionary
+
     prime_list = []
     
     for key, value in int_dict.items():
@@ -25,8 +34,4 @@ def prime(n):
             
     print(prime_list[-1])
     
-# from https://codereview.stackexchange.com/questions/188053/project-euler-problem-7-in-python-10001st-prime-number
-def upper_bound(n):
-if n < 6:
-    return 100
-return ceil(n * (log(n) + log(log(n))))
+
