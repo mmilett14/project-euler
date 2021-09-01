@@ -1,4 +1,4 @@
-import math
+from math, import sqrt, ceil, log
 
 def prime(n):
     int_dict = {i: True for i in range(2, n+1)}
@@ -24,3 +24,9 @@ def prime(n):
             prime_list.append(key)
             
     print(prime_list[-1])
+    
+# from https://codereview.stackexchange.com/questions/188053/project-euler-problem-7-in-python-10001st-prime-number
+def upper_bound(n):
+if n < 6:
+    return 100
+return ceil(n * (log(n) + log(log(n))))
